@@ -31,25 +31,21 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>1</td>
-										<td>Mark</td>
-										<td>Otto</td>
-										<td>mdo</td>
-									</tr>
-									<tr>
-										<td>2</td>
-										<td>Jacob</td>
-										<td>Thornton</td>
-										<td>fat</td>
-									</tr>
-									<tr>
-										<td>3</td>
-										<td colspan="2">Larry the Bird</td>
-										<td>twitter</td>
-									</tr>
+									@foreach (var item in Model)
+									{
+										<tr>
+											<td>@item.ExperienceId</td>
+											<td>@item.ExperienceHead</td>
+											<td>@item.ExperienceTitle</td>
+											<td>@item.ExperienceDate</td>
+											<td><a href="/Experience/DeleteExperience/@item.ExperienceId" class="btn btn-danger">SİL</a></td>
+											<td><a href="/Experience/UpdateExperience/@item.ExperienceId" class="btn btn-primary">GÜNCELLE</a></td>
+										</tr>
+									}
+						
 								</tbody>
 							</table>
+							<a href="/Experience/CreateExperience/" class="btn btn-success">YENİ DENEYİM EKLE</a>
 						</div>
 					</div>
 				</div>
